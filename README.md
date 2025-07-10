@@ -15,7 +15,7 @@ Figures in paper "Finding the optimal degassing condition for linear polyacrylam
 
 Code
 
-[](R/SPM_1_spectrum.R)
+[click to see](R/SPM_1_spectrum.R)
 
 [](R/SPM_2_electropherogram_Run4.R)
 
