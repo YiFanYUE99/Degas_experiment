@@ -6,7 +6,7 @@ library(ggdist)#小提琴(右半边)
 library(ggbreak)#断轴
 library(tidyr)
 library(patchwork)
-source("Rcode/parameter.R")
+source("R/parameter.R")
 P1<-read_excel("Data_Ecoli/P1.xlsx")
 P2<-read_excel("Data_Ecoli/P2.xlsx")
 
@@ -48,19 +48,8 @@ plot11<-ggplot(data = P1,aes(x=Group,y=RT))+
   scale_fill_manual(values = capillarycolor)+
   guides(fill="none")+
   labs(title = "",x="",y="Migration Time")+
-  #stat_compare_means(method = "anova", label.y = 8) +
-  stat_compare_means(comparisons = list(c(G[1],G[2]), c(G[1], G[3]), c(G[1], G[4]),
-                                        c(G[2],G[3]),c(G[2],G[4]),
-                                        c(G[3],G[4])),
-                     method = "t.test",
-                     label = "p.signif",#标注显著性
-                     hide.ns = F,#标非显著
-                     color=P1_Ecoli,
-                     size=sigsize,
-                     tip.length = 0.003,      # 线条末端小短线的长度
-                     step.increase = 0.05) +     # 每组标注的高度递增值
   xlim(G)+
-  scale_y_continuous(limits = c(22.5,32.5),breaks = c(22.5,25,27.5,30,32.5))+
+  scale_y_continuous(limits = c(22.5,30.5),breaks = c(22.5,25,27.5,30))+
   theme(axis.title =  element_text(size = axis_title,family = "sans",color = P1_Ecoli, face = "bold"),
         axis.ticks = element_line(color = P1_Ecoli,size=axis_ticks),
         axis.text.y.left = element_text(size=axis_text,color = P1_Ecoli,family = "sans",face="bold"),
@@ -111,19 +100,8 @@ plot12<-ggplot(data = P2,aes(x=Group,y=RT))+
   scale_fill_manual(values = capillarycolor)+
   guides(fill="none")+
   labs(title = "",x="",y="")+
-  #stat_compare_means(method = "anova", label.y = 8) +
-  stat_compare_means(comparisons = list(c(G[1],G[2]), c(G[1], G[3]), c(G[1], G[4]),
-                                        c(G[2],G[3]),c(G[2],G[4]),
-                                        c(G[3],G[4])),
-                     method = "t.test",
-                     label = "p.signif",#标注显著性
-                     hide.ns = F,#标非显著
-                     color=P2_Ecoli,
-                     size=sigsize,
-                     tip.length = 0.003,      # 线条末端小短线的长度
-                     step.increase = 0.05) +     # 每组标注的高度递增值
   xlim(G)+
-  scale_y_continuous(limits = c(22.5,32.5),breaks = c(22.5,25,27.5,30,32.5))+
+  scale_y_continuous(limits = c(22.5,30.5),breaks = c(22.5,25,27.5,30))+
   theme(axis.title =  element_text(size = axis_title,family = "sans",color = P2_Ecoli, face = "bold"),
         axis.ticks = element_line(color = P2_Ecoli,size=axis_ticks),
         axis.text.y.left = element_text(size=axis_text,color = P2_Ecoli,family = "sans",face="bold"),

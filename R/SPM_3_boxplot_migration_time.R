@@ -1,10 +1,11 @@
 library(readxl)
+library(dplyr)
 library(ggpubr)#用于标出显著性
 library(ggplot2)
 library(patchwork)
-source("Rcode/parameter.R")
+source("R/parameter.R")
 df<-read_excel("Data_SPM/capillary_standardprotein.xlsx")
-df<-df%>%filter(capillary!="50_unstirred")
+df<-df%>%filter(`capillary`!="50_unstirred")
 #Ubq
 Ubqdf<-df%>%
   filter(Peak=="Ubiquitin")%>%
@@ -20,14 +21,6 @@ UbqMT<-ggplot(data = Ubqdf,aes(x=capillary,y=`migration_time(min)`))+
                position = position_nudge(x = 0))+
   scale_fill_manual(values=capillarycolor)+
   #显著性检验
-  stat_compare_means(comparisons = list(c(G[1],G[2]),c(G[1],G[3]),c(G[2],G[3])),
-                     method = "t.test",
-                     label = "p.signif",#标注显著性
-                     hide.ns = F,#标非显著
-                     color=spmcolor[1],
-                     size=sigsize,
-                     tip.length = 0.003,      # 线条末端小短线的长度
-                     step.increase = 0.05) +     # 每组标注的高度递增值
   labs(title="Ubiquitin",x="",y="Migration time (min)")+
   xlim(G)+
   theme(plot.title = element_text(size = axis_title+1,family = "sans",color = spmcolor[1], face = "bold",hjust=0.5),
@@ -47,7 +40,7 @@ UbqMT<-ggplot(data = Ubqdf,aes(x=capillary,y=`migration_time(min)`))+
         legend.text = element_text(size = legend_text,color = spmcolor[1],family = "sans",face="bold"),
   )
 UbqMT
-#ggsave(plot =UbqMT,"pic/SPM/Migration_Ubq.tiff",width = 70,height=70,units = "mm",dpi = 600)
+ggsave(plot =UbqMT,"pic/SPM/Migration_Ubq.tiff",width = 70,height=70,units = "mm",dpi = 600)
 
 
 
@@ -75,14 +68,6 @@ MyoMT<-ggplot(data = Myodf,aes(x=capillary,y=`migration_time(min)`))+
                linewidth=boxline_width,
                position = position_nudge(x = 0))+
   scale_fill_manual(values=capillarycolor)+
-  stat_compare_means(comparisons = list(c(G[1],G[2]),c(G[1],G[3]),c(G[2],G[3])),
-                     method = "t.test",
-                     label = "p.signif",#标注显著性
-                     hide.ns = F,#标非显著
-                     color=spmcolor[2],
-                     size=sigsize,
-                     tip.length = 0.003,      # 线条末端小短线的长度
-                     step.increase = 0.05) +     # 每组标注的高度递增值
   labs(title="Myoglobin",x="",y="Migration time (min)")+
   xlim(G)+
   theme(plot.title = element_text(size = axis_title+1,family = "sans",color = spmcolor[2], face = "bold",hjust=0.5),
@@ -124,14 +109,6 @@ CAMT<-ggplot(data = CAdf,aes(x=capillary,y=`migration_time(min)`))+
                position = position_nudge(x = 0))+
   scale_fill_manual(values=capillarycolor)+
   #显著性检验
-  stat_compare_means(comparisons = list(c(G[1],G[2]),c(G[1],G[3]),c(G[2],G[3])),
-                     method = "t.test",
-                     label = "p.signif",#标注显著性
-                     hide.ns = F,#标非显著
-                     color=spmcolor[3],
-                     size=sigsize,
-                     tip.length = 0.003,      # 线条末端小短线的长度
-                     step.increase = 0.05) +     # 每组标注的高度递增值
   labs(title="Carbonic anhydrase",x="",y="Migration time (min)")+
   xlim(G)+
   theme(plot.title = element_text(size = axis_title+1,family = "sans",color = spmcolor[3], face = "bold",hjust=0.5),

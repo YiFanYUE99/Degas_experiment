@@ -24,7 +24,6 @@ capillarycolor<-c(`50_stirred`="#076526",
                   `75_unstirred`="#3DBAEC")
 capillarycolor2<-c(`75_unstirred_1`="#3DBAEC",
                    `75_unstirred_2`="#6DBAEC",
-                   `75_unstirred_3`="#0DBAEC",
                    `75_unstirred_ZHU`="#9DBAEC")
 Run20<-colorRampPalette(c("#FFFFFF", "#FFC0CB", "#FF0000"))(20)#20个Run的颜色
 NOTPcolor<-c(`NOTP(width)`="#2979FF",`NOTP(FWHM)`="#D50000")
