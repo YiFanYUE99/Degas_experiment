@@ -13,11 +13,7 @@ Figures in paper "Finding the optimal degassing condition for linear polyacrylam
 ## Figure 3
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/fig3_SPM_BPC.jpg)
 
-Code
-
-[click to see](R/SPM_1_spectrum.R)
-
-[](R/SPM_2_electropherogram_Run4.R)
+Code [1](R/SPM_1_spectrum.R) [2](R/SPM_2_electropherogram_Run4.R)
 
 ## Figure 4
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/fig4_SPM_boxplot.jpg)
