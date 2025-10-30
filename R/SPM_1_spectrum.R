@@ -1,5 +1,37 @@
 library(ggplot2)
-source("Rcode/parameter.R")
+source("R/parameter.R")
+
+
+##BSA
+BSA<-read.csv("Data_SPM/BSA.csv",skip=1)
+colnames(BSA)<-c("points","mz","intensity")
+
+BSAplot<-ggplot(data=BSA,aes(x=mz,y=intensity))+
+  geom_linerange(aes(x=mz,ymin=0,ymax = intensity),
+                 color="grey30",
+                 linewidth=line_width)+
+  labs(title="",x="",y="")+
+  scale_x_continuous(limits=c(1130,2945))+
+  theme(plot.title =  element_text(size = plot_title,family = "sans",color = "grey30", face = "bold",hjust = 0.5),
+        axis.title =  element_text(size = axis_title,family = "sans",color = "grey30", face = "bold"),
+        axis.ticks = element_line(color = "grey30",size=axis_ticks),
+        axis.text.y.left = element_text(size=axis_text,color = "grey30",family = "sans",face="bold"),
+        axis.text.x= element_text(size=axis_text,angle=0,color = "grey30",family = "sans",face="bold"),
+        #axis.text.x=element_blank(),
+        panel.background = element_rect(fill = "white", color = NA),  # 透明背景
+        plot.background = element_rect(fill = "white", color = NA),   # 透明背景
+        panel.grid.major = element_line(color = "gray90"),  # 保留主网格线
+        axis.line = element_blank(),  # 保留横纵轴的黑色竖线
+        #标签位置
+        panel.border = element_rect(color = "grey30",fill=NA,linewidth = 1),  # 无边框
+        legend.position = "none",
+  )
+BSAplot
+ggsave(plot = BSAplot,"pic/SPM/Spectrum0_BSA.pdf",width = 210,height=100,units = "mm",dpi = 600)
+
+
+
+
 
 ##Ubq
 Ubq<-read.csv("Data_SPM/Ubq.csv",skip=1)

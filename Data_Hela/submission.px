@@ -1,0 +1,45 @@
+MTD	submitter_name	Liangliang Sun
+MTD	submitter_email	lsun@chemistry.msu.edu
+MTD	submitter_affiliation	Michigan State University 
+MTD	submitter_pride_login	lsun@chemistry.msu.edu
+MTD	lab_head_name	Liangliang Sun
+MTD	lab_head_email	lsun@chemistry.msu.edu
+MTD	lab_head_affiliation	Department of Chemistry, Michigan State University, East Lansing, Michigan 48824, United States
+MTD	project_title	Finding the optimal degassing condition for linear polyacrylamide coated capillaries used in capillary zone electrophoresis-mass spectrometry-based top-down proteomics
+MTD	project_description	LPA-coated capillaries are widely used; however, the quality of the coating—which directly affects separation performance and analyte identification—can vary significantly depending on the individual performing the procedure. A critical factor in achieving consistent coating quality is the degassing step, which involves removing dissolved oxygen from the LPA solution using nitrogen. In this study, we systematically evaluated four different degassing conditions for preparing polyacrylamide-coated capillaries for CZE-MS top-down proteomic analysis. To prevent oxygen exposure during the coating process, we degassed the solution by flowing nitrogen through a 15 cm-long capillary. The key variable across degassing conditions was whether the acrylamide and APS coating solution was stirred, and the inner diameter of the 15-cm-long capillary used for degassing. Among all designed degassing conditions, the protocol involving no stirring during degassing and using a 75 μm inner diameter capillary to degas (“75_unstirred”) consistently yielded the best performance. Across 210 runs—spanning over 200 hours on a Q-TOF and more than 10 hours on an Orbitrap 480—the 75_unstirred capillary demonstrated lower migration time RSD (<2.6%), narrower peak widths, and a higher number of theoretical plates for standard protein mixture separation. For complex proteomes such as E. coli lysates, this degassing condition exhibited enhanced resolution, signal stability, and excellent run-to-run reproducibility, with minimal migration time variation (RSD<1.5%) and relatively high signal-to-noise ratios. In a run used to identify proteins from a HeLa cell lysate, this capillary enabled the identification of 305 proteoforms. Our results highlight the critical role of degassing conditions—a 75 μm i.d. capillary for degassing and no stirring—in producing reproducible polyacrylamide-coated capillaries. The 75_unstirred protocol, which involves degassing the coating solution without agitation under 30 psi for 10 minutes by nitrogen flowing through a 75 μm i.d., 15 cm in length capillary, provides a simple and effective method for consistent capillary coating. We tested this degassing method through our CE-MS summer school 2025 students. With 10 LPA capillaries made by 9 students, the reproducible separation performance was obtained by CZE-MS separation of 4 standard protein mixture, which further prove the 75_unstirred method is reliable, user-friendly and efficient.
+MTD	keywords	capillary zone electrophoresis, degass, polyacrylamide-coated capillary, top-down proteomics, reproducibility
+MTD	sample_processing_protocol	For each replicate, 500 μL of acrylamide solution was prepared by dissolving 40 mg of acrylamide in 1 mL of deionized water. Separately, 3.5 μL of APS solution was prepared by dissolving 5 mg of APS in 100 μL of water. These solutions were prepared to accommodate eight replicates. For each replicate, 500 μL of the acrylamide solution was mixed with 3.5 μL of the APS solution in a 1.5 mL tube, followed by vortexing. A small hole was created in the cap of each tube to insert a capillary with a tight fit. For four replicates, 75 μm inner diameter (i.d.) capillaries were inserted; for the remaining four replicates, 50 μm i.d. capillaries were used. To remove dissolved oxygen, the acrylamide and APS mixture was degassed under four conditions by bubbling nitrogen gas (30 psi) through 15 cm capillaries with varying inner diameters for 10 minutes, as illustrated in Figure 2: Condition 1: A 50 μm i.d. capillary was used to degas the solution while simultaneously stirring with the same capillary, and two replicates were made. Condition 2: A 50 μm i.d. capillary was used to degas the solution without stirring. The 1.5 mL tube was fixed vertically on the wall and remained stationary during degassing, and two replicates were made. Condition 3: A 75 μm i.d. capillary was used to degas the solution with stirring, and two replicates were made. Condition 4: A 75 μm i.d. capillary was used to degas the solution without stirring, with the tube fixed and kept stationary as described above, and two replicates were made. After identifying this as the optimal degassing condition, two additional capillaries were prepared under this degassing condition by two different individuals to assess reproducibility.
+MTD	data_processing_protocol	Proteoform identification and quantification were performed on yeast RAW files using the TopPIC software (version 1.7.8). The RAW files were first converted to mzML format through MSConvert from ProteoWizard. Spectral deconvolution was performed with TopFD, integrated within the TopPIC package (version 1.7.8), using default parameters. Database searches were conducted using the TopPIC feature in the package, against the UniProt Homo sapiens proteome database (UP000005640, 83587 entries, accessed on 04/07/2025). The mass error tolerance was set to 10 ppm, with a maximum mass shift of 500 Da for unknown modifications. False discovery rate cutoffs were set at 1% for identification and 5% at the proteoform level. Data processing and visualization were performed using R version 4.4.1. Base R packages were used along with the following additional packages: ggplot2, ggdist, ggbreak, and patchwork for data visualization; readxl, dplyr, and tidyr for data cleaning and wrangling; and ggpubr for performing Student’s t-tests. All the scripts for data analysis and data visualization are provided open-source via https://github.com/YiFanYUE99/Degas_experiment/
+MTD	experiment_type	[PRIDE, PRIDE:0000427, Top-down proteomics, ]
+MTD	submission_type	PARTIAL
+MTD	species	[NEWT, 9606, Homo sapiens (Human), ]
+MTD	tissue	[PRIDE, PRIDE:0000442, Tissue not applicable to dataset, ]
+MTD	instrument	[MS, MS:1003028, Orbitrap Exploris 480, ]
+MTD	modification	[PRIDE, PRIDE:0000398, No PTMs are included in the dataset, ]
+
+FMH	file_id	file_type	file_path	file_mapping
+FME	0	OTHER	D:\Users\downloads\px-submission-tool\px-submission-tool-2.10.3\checksum.txt
+FME	1	RAW	F:\Degas\HeLa\Hela10k01.raw
+FME	2	RAW	F:\Degas\HeLa\Hela10k02.raw
+FME	3	RAW	F:\Degas\HeLa\Hela10k03.raw
+FME	4	RAW	F:\Degas\HeLa\Hela10k04.raw
+FME	5	RAW	F:\Degas\HeLa\Hela10k05.raw
+FME	6	RAW	F:\Degas\HeLa\Hela10k06.raw
+FME	7	RAW	F:\Degas\HeLa\Hela10k07.raw
+FME	8	RAW	F:\Degas\HeLa\Hela10k09.raw
+FME	9	RAW	F:\Degas\HeLa\Hela10k10.raw
+FME	10	RAW	F:\Degas\HeLa\Hela10k11.raw
+FME	11	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k01_ms2_toppic_proteoform_single.tsv
+FME	12	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k02_ms2_toppic_proteoform_single.tsv
+FME	13	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k03_ms2_toppic_proteoform_single.tsv
+FME	14	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k04_ms2_toppic_proteoform_single.tsv
+FME	15	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k05_ms2_toppic_proteoform_single.tsv
+FME	16	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k06_ms2_toppic_proteoform_single.tsv
+FME	17	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k07_ms2_toppic_proteoform_single.tsv
+FME	18	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k09_ms2_toppic_proteoform_single.tsv
+FME	19	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k10_ms2_toppic_proteoform_single.tsv
+FME	20	SEARCH	D:\github\Degas_experiment\Data_Hela\Hela10k11_ms2_toppic_proteoform_single.tsv
+
+
+COM	Version:2.10.3
+COM	Dataset License:CC0
