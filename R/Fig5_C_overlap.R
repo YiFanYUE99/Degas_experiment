@@ -85,13 +85,20 @@ for (i in 1:10) {
   ppnumber[i,2]=n_proteins
   ppnumber[i,3]=dim(df_filtered_list[[i]])[1]
 }
+proteoform_mean=mean(ppnumber$proteoform_number)
+proteoform_sd=sd(ppnumber$proteoform_number)
+rsd_proteoform<-sd(ppnumber$proteoform_number)/mean(ppnumber$proteoform_number)*100
+protein_mean=mean(ppnumber$protein_number)
+protein_sd=sd(ppnumber$protein_number)
+rsd_protein<-sd(ppnumber$protein_number)/mean(ppnumber$protein_number)*100
+#作图
 numberplot<-ggplot(data = ppnumber,aes(x=RUN,y=proteoform_number))+
   geom_col(fill="#998EC3")+
   geom_col(aes(x=RUN,y=protein_number),fill="#FEE391")+
-  labs(title = "",x="RUN",y="")+
+  labs(title = "",x="RUN",y="Count")+
   scale_x_discrete(position = "bottom",limits=factor(c(1,2,3,4,5,6,7,8,9,10)))+
   geom_text(data = ppnumber,aes(x=RUN,y=proteoform_number,label = proteoform_number),vjust=1.5,color="white",size=geom_text_size)+
-  geom_text(data = ppnumber,aes(x=RUN,y=protein_number,label = protein_number),vjust=1.5,color="white",size=geom_text_size)+
+  geom_text(data = ppnumber,aes(x=RUN,y=protein_number,label = protein_number),vjust=1.5,color="black",size=geom_text_size)+
   theme(axis.title =  element_text(size = axis_title,family = "sans",color = "black", face = "bold"),
         axis.ticks = element_line(color = "black",size=axis_ticks),
         axis.text.y = element_text(size=axis_text,color = "black",family = "sans",face="bold"),
@@ -148,7 +155,8 @@ a <- a %>%
 a <- a %>%
   mutate(across(5:14, ~ log10(.)))
 a <- a %>%
-  mutate(Proteoform_name = paste(.[[1]], .[[2]], .[[3]], sep = "_"))
+  mutate(Proteoform_name = paste(.[[1]], .[[2]], .[[3]], sep = "_"))%>%
+  mutate(Proteoform_index = as.factor(row_number()))
 write.csv(a,file = "data/shared_proteoforms.csv",row.names = FALSE)
 long_a <- a %>%
   pivot_longer(
@@ -157,7 +165,7 @@ long_a <- a %>%
     values_to = "Intensity"
   )%>%
   mutate(RUN = str_remove(RUN, "RUN"))
-heatmapintensity<-ggplot(long_a,aes(x=RUN,y=Proteoform_name,fill=Intensity))+
+heatmapintensity<-ggplot(long_a,aes(x=RUN,y=Proteoform_index,fill=Intensity))+
   geom_tile(color = "grey") +
   scale_x_discrete(limits = as.character(1:10))+
   scale_fill_gradientn( colors = c("#1F78B4", "white", "#F68013"),
@@ -167,7 +175,7 @@ heatmapintensity<-ggplot(long_a,aes(x=RUN,y=Proteoform_name,fill=Intensity))+
   guides(fill = guide_colorbar(title = "log10 (Intensity)",keywidth = 0.5, keyheight = 5))+
   theme(axis.title =  element_text(size = axis_title,family = "sans",color = "black", face = "bold"),
         axis.ticks = element_blank(),
-        axis.text.y = element_blank(),
+        axis.text.y = element_text(size=axis_text,angle=0,hjust=1,color = "black",family = "sans",face="bold"),
         axis.text.x= element_text(size=axis_text,angle=0,hjust=1,color = "black",family = "sans",face="bold"),
         panel.background = element_rect(fill = "white", color = NA),  # 透明背景
         plot.background = element_rect(fill = "white", color = NA),   # 透明背景

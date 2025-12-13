@@ -287,30 +287,23 @@ ggsave(plot = plot22,"pic/test/Intensity_P2.pdf",width = 105,height=70,units = "
 #需要先整合P1和P2
 P1$Peak=rep("Peak 1",80)
 P2$Peak=rep("Peak 2",80)
-P<-rbind(P1,P2)
-P<-P%>%select(Group,Run,`NOTP(width)`,`NOTP(FWHM)`,Peak)
-Plong<-pivot_longer(P,
-                    cols = starts_with("NOTP"),
-                    names_to = "Calculated by",
-                    values_to = "NOTP")
-Plong1<-Plong%>%filter(Peak=="Peak 1")
-Plong2<-Plong%>%filter(Peak=="Peak 2")
 
-plot31<-ggplot(data = Plong1,aes(x=Group,y=NOTP))+
-  geom_boxplot(aes(color=`Calculated by`,
-                   fill=Group),
+
+P1_NOTP<-P1%>%select(Group,Run,`NOTP(FWHM)`,Peak)
+P2_NOTP<-P2%>%select(Group,Run,`NOTP(FWHM)`,Peak)
+
+plot31<-ggplot(data = P1_NOTP,aes(x=Group,y=`NOTP(FWHM)`))+
+  geom_boxplot(aes(fill=Group),
+               color = "black",
                outlier.size = outlier_size,
-               outlier.shape = 4,
+               outlier.shape = NA,
                linewidth=boxline_width,)+
-  scale_color_manual(values=NOTPcolor,labels=c(`NOTP(width)`="Peak Width",`NOTP(FWHM)`="FWHM"))+
   scale_fill_manual(values = capillarycolor)+
   guides(fill="none")+
   labs(title="",x="",y="Number of theoretical plates")+
   xlim(G)+
-  scale_y_break(c(1.2e5,3.5e5), scales = 0.4) +  # 断开区间
-  scale_y_continuous(limits = c(0,1.2e6),
-                     breaks = c(0,3e4,6e4,9e4,1.2e5,3.6e5,
-                                7.8e5,1.2e6),
+  scale_y_continuous(limits = c(3e4,1.2e5),
+                     breaks = c(3e4,6e4,9e4,1.2e4),
                      labels = function(x) format(x, scientific = TRUE))+
   theme(axis.title =  element_text(size = axis_title,family = "sans",color = P1_Ecoli, face = "bold"),
         axis.ticks = element_line(color = P1_Ecoli,size=axis_ticks),
@@ -330,7 +323,6 @@ plot31<-ggplot(data = Plong1,aes(x=Group,y=NOTP))+
         legend.text = element_text(size = legend_text,color = P1_Ecoli,family = "sans",face="bold"),
         legend.key.height = unit(2, "mm"),   # 控制每项高度
         legend.spacing.y = unit(0.3, "mm"),     # 控制项与项之间的垂直间隔
-        ggbreak.axis = element_blank(),  # 👈 隐藏断轴区域的重复横轴
         axis.text.y.right = element_blank(),
         axis.ticks.y.right = element_blank(),
         axis.title.y.right = element_blank()
@@ -338,20 +330,18 @@ plot31<-ggplot(data = Plong1,aes(x=Group,y=NOTP))+
 plot31
 ggsave(plot = plot31,"pic/test/NOTP_P1.pdf",width = 105,height=75,units = "mm",dpi = 600)
 
-plot32<-ggplot(data = Plong2,aes(x=Group,y=NOTP))+
-  geom_boxplot(aes(color=`Calculated by`,
-                   fill=Group),
+plot32<-ggplot(data = P2_NOTP,aes(x=Group,y=`NOTP(FWHM)`))+
+  geom_boxplot(aes(fill=Group),
+               color="black",
                outlier.size = outlier_size,
-               outlier.shape = 4,
+               outlier.shape = NA,
                linewidth=boxline_width,)+
-  scale_color_manual(values=NOTPcolor,labels=c(`NOTP(width)`="Peak Width",`NOTP(FWHM)`="FWHM"))+
   scale_fill_manual(values = capillarycolor)+
   guides(fill="none")+
   labs(title="",x="",y="")+
   xlim(G)+
-  scale_y_break(c(3.2e5,7.5e5), scales = 0.2) +  # 断开区间
-  scale_y_continuous(limits = c(0,3e6),
-                     breaks = c(0,1e5,2e5,3e5,8e5,1.9e6,3e6),
+  scale_y_continuous(limits = c(5E4,2.5e5),
+                     breaks = c(0,5E4,1E5,1.5E5,2E5,2.5E5),
                      labels = function(x) format(x, scientific = TRUE)
                      )+
   theme(axis.title =  element_text(size = axis_title,family = "sans",color = P2_Ecoli, face = "bold"),
@@ -374,7 +364,6 @@ plot32<-ggplot(data = Plong2,aes(x=Group,y=NOTP))+
         legend.spacing.y = unit(0.3, "mm"),     # 控制项与项之间的垂直间隔
         legend.key.width = unit(3, "mm"),     # 控制每项的块宽度
         legend.spacing.x = unit(0.3, "cm"),         # 控制图例项之间的间距
-        ggbreak.axis = element_blank(),  # 👈 隐藏断轴区域的重复横轴
         axis.text.y.right = element_blank(),
         axis.ticks.y.right = element_blank(),
         axis.title.y.right = element_blank()
