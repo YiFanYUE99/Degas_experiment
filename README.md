@@ -1,8 +1,4 @@
-# Figures and codes in paper "Finding the optimal degassing condition for linear polyacrylamide coated capillaries used in capillary zone electrophoresis-mass spectrometry-based top-down proteomics"
-The images shown are in a low-resolution version. For the high-resolution original, please refer to the original publication.
-
-## Schematic
-![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Schematic.jpg)
+# Figures and codes in paper "Advancing the reproducibility and repeatability of capillary zone electrophoresis-mass spectrometry-based top-down proteomics by an improved capillary coating procedure"
 
 ## Figure 1
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/capillary_coating_fig1.jpg)
@@ -25,15 +21,7 @@ Code [1](R/SPM_3_boxplot_migration_time.R) [2](R/SPM_4_boxplot_FWHM.R) [3](R/SPM
 
 Code [1](R/2_BPC_75_07_electropherogram.R)
 
-## Figure 6
-![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Ecoli_fig6_boxplot.jpg)
 
-Code [1](R/0_spectrum_Ecoli.R) [2](R/1_Ecoli_P1_boxplot.R)
-
-## Figure 7
-![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Hela_fig7.jpg)
-
-Code [1](R/Hela_BPC.R) [2](R/Hela_overlap.R)
 
 ## Figure S1
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/figS1_BPC_SPM.jpg)
