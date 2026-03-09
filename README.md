@@ -6,7 +6,7 @@
 ## Figure 2
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Fig2.png)
 
-Code [1](R/Fig2_MT.R) [2](R/Fig2_FWHM.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig2_MT.R) [2](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig2_FWHM.R)
 
 ## Figure 3
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Fig3.png)
@@ -16,19 +16,19 @@ Code [1](R/Fig3_spectrum.R) [2](R/Fig3_Electropherogram.R)
 ## Figure 4
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Fig4.png)
 
-Code [1](R/Fig4.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig4.R)
 
 ## Figure 5
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Fig5.png)
 
-Code [1](R/Fig5_C_overlap.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig5_C_overlap.R)
 
 
 
 ## Figure S1
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS1.png)
 
-Code [1](R/FigS1_eclectropherogram_1.R) [2](FigS1_electropherogram_2.R) [3](FigS1_spectrum.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS1_eclectropherogram_1.R) [2](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS1_electropherogram_2.R) [3](FigS1_spectrum.R)
 
 ## Figure S2
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS2.png)
