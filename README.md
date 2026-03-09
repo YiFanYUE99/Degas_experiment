@@ -11,7 +11,7 @@ Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig2_MT.R) [
 ## Figure 3
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Fig3.png)
 
-Code [1](R/Fig3_spectrum.R) [2](R/Fig3_Electropherogram.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig3_spectrum.R) [2](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/Fig3_Electropherogram.R)
 
 ## Figure 4
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/Fig4.png)
@@ -33,12 +33,12 @@ Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS1_eclect
 ## Figure S2
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS2.png)
 
-Code [1](R/FigS2_50_stirred.R) [2](R/FigS2_50_unstirred.R) [3](R/FigS2_75_stirred.R) [4](R/FigS2_75_unstirred.R) [5](R/FigS2_SNR.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS2_50_stirred.R) [2](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS2_50_unstirred.R) [3](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS2_75_stirred.R) [4](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS2_75_unstirred.R) [5](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS2_SNR.R)
 
 ## Figure S3
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS3.png)
 
-Code [1](R/FigS3.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS3.R)
 
 ## Figure S4
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS4.jpg)
@@ -53,5 +53,5 @@ Code [1](R/FigS3.R)
 
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/TOC.png)
 
-Code [1](R/TOC_FigS6.R)
+Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/TOC_FigS6.R)
 
