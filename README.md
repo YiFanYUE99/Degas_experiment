@@ -48,10 +48,12 @@ Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/FigS3.R)
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS5.jpg)
 
 
-## Figure S6 TOC
+## Figure S6 & TOC
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/FigS6.png)
 
+
 ![](https://github.com/YiFanYUE99/Degas_experiment/blob/main/pic/TOC.png)
+
 
 Code [1](https://github.com/YiFanYUE99/Degas_experiment/blob/main/R/TOC_FigS6.R)
 
